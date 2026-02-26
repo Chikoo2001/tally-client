@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B1120;
+    color: #E2E8F0;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #0B1120; }
+  ::-webkit-scrollbar-thumb { background: #243358; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #FCAF1E; }
+}
+
+@layer components {
+  .tally-table { @apply w-full border-collapse text-xs; }
+  .tally-th {
+    background-color: #1A2744;
+    color: #FCAF1E;
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid #243358;
+    font-weight: 600;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .tally-td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #243358;
+    color: #E2E8F0;
+    white-space: nowrap;
+  }
+  .tally-tr { transition: background-color 0.1s; }
+  .tally-tr:hover { background-color: #1E2F4D; }
+  .tally-tr.selected { background-color: #1A2744; outline: 1px solid #FCAF1E; }
+  .tally-input {
+    background-color: #0D1B33;
+    border: 1px solid #243358;
+    color: #E2E8F0;
+    padding: 5px 8px;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+  }
+  .tally-input:focus { border-color: #FCAF1E; }
+  .tally-btn {
+    background-color: #1A2744;
+    border: 1px solid #243358;
+    color: #E2E8F0;
+    padding: 5px 14px;
+    font-family: Consolas, Monaco, 'Courier New', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  .tally-btn:hover { background-color: #1E2F4D; border-color: #FCAF1E; }
+  .tally-btn.primary { background-color: #FCAF1E; color: #0B1120; border-color: #FCAF1E; font-weight: 700; }
+  .tally-btn.primary:hover { background-color: #e09c15; }
+  .tally-panel { background-color: #1A2744; border: 1px solid #243358; padding: 12px; }
+  .amount-dr { color: #F87171; font-weight: 600; }
+  .amount-cr { color: #34D399; font-weight: 600; }
+  .tally-label { color: #8B9DC3; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tally-value { color: #E2E8F0; }
+  .tally-section-header {
+    background-color: #243358;
+    color: #FCAF1E;
+    padding: 4px 8px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  .shortcut-key {
+    display: inline-block;
+    background-color: #243358;
+    color: #FCAF1E;
+    border: 1px solid #FCAF1E;
+    padding: 1px 5px;
+    font-size: 10px;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+}
